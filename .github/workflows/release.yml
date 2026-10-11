@@ -121,7 +121,7 @@ jobs:
             "$bin" completions "$shell" > "$out/completions/pitboard.$shell"
           done
           tar -C "$RUNNER_TEMP/dist" -czf "$RUNNER_TEMP/dist/$name.tar.gz" "$name"
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: ${{ matrix.target }}
           path: ${{ runner.temp }}/dist/*.tar.gz
@@ -258,7 +258,7 @@ jobs:
             echo "does when SPARKLE_PRIVATE_KEY is not the key SPARKLE_PUBLIC_KEY names" >&2
             exit 1
           fi
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: app
           path: |
@@ -298,7 +298,7 @@ jobs:
       # Read back from the release instead, they would be whatever the release held by then,
       # and anyone who could change the release could change a tarball and its line together.
       # Overwritten, so a publish job run again can hand it over again.
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: SHA256SUMS
           path: ${{ runner.temp }}/dist/SHA256SUMS
